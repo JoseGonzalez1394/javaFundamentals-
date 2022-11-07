@@ -14,11 +14,11 @@ public class Main {
         }
     }
 
-    public static String flipNHeads(int n) {
+    public static String flipNHeads(int attempts) {
         int counter = 0;
         int totalCounter = 0;
 
-        while (counter < n) {
+        while (counter < attempts) {
             totalCounter++;
             if (Math.random() < .5) {
                 System.out.println("tails");
@@ -29,9 +29,9 @@ public class Main {
             }
         }
         if (totalCounter > 1) {
-            return ("It took " + totalCounter + " " + "flips to flip" + " " + n + " heads in a row.");
+            return ("It took " + totalCounter + " " + "flips to flip" + " " + attempts + " heads in a row.");
         }else{
-            return ("It took " + totalCounter + " " + "flip to flip" + " " + n + " " + "head in a row.");
+            return ("It took " + totalCounter + " " + "flip to flip" + " " + attempts  + " " + "head in a row.");
         }
     }
 
