@@ -3,20 +3,19 @@ package basiclibrary;
 import java.util.Arrays;
 import java.util.Random;
 public class Library {
-    public int[] roll(int rolls){
+    public static int[] roll(int rolls){
         int[] dice= {1,2,3,4,5,6};
-        Random ran = new Random();
+        Random random = new Random();
         int[] rolled = new int[rolls];
 
         for(int i = 0; i < rolls; i++){
-            int roll = ran.nextInt(dice.length);
+            int roll = random.nextInt(dice.length);
             rolled[i] = dice[roll];
         }
-        System.out.println(Arrays.toString(rolled));
         return rolled;
     }
 
-    public boolean containsDuplicates(int[] duplicate) {
+    public static  boolean containsDuplicates(int[] duplicate) {
         Arrays.sort(duplicate);
 
         boolean answer = false;
@@ -35,23 +34,23 @@ public class Library {
         return answer;
     }
 
-    public int calculateAverage(int[] arr){
+    public static  int calculateAverage(int[] arr){
         int sum = Arrays.stream(arr).sum();
         return (sum / arr.length);
     }
 
-    public int[] lowestAverageArray(int[][] matrix){
+    public static int[] lowestAverageArray(int[][] array){
 
-        int currentAvg = 100;
+        double currentAvg = 100;
         int[] answer = new int[10];
 
-        for(int i = 0; i < matrix.length; i++){
-            int sum = Arrays.stream(matrix[i]).sum();
-            int average = (sum / matrix[i].length);
-
-            if (average <= currentAvg){
+        for(int i = 0; i < array.length; i++){
+            int sum = Arrays.stream(array[i]).sum();
+            double average = (sum / array[i].length);
+            System.out.println(average);
+            if (average < currentAvg){
                 currentAvg = average;
-                answer = matrix[i];
+                answer = array[i];
             }
         }
         return answer;

@@ -34,9 +34,12 @@ class LibraryTest {
                 {1, 2, 3, 4, 5, 6, 7, 8}
         };
 
-        int[] correct = {1, 2, 3, 4, 5, 6, 7};
+        int[] correct = {1, 2, 3, 4, 5};
 
-        assertEquals(correct, arrayToTest.lowestAverageArray(array));
+
+
+
+        assertArrayEquals(correct, arrayToTest.lowestAverageArray(array));
 
     }
 }
